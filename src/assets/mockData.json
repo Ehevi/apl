@@ -1,0 +1,112 @@
+[
+    {
+        "name": "A",
+        "desc": "beznadzieja",
+        "iconUrl": "../favicon.ico",
+        "ects": 2,
+        "semester": 2,
+        "classType": "wykład",
+        "maxStudents": 120,
+        "rating": 2,
+        "teacher": "nazwisko"
+    },
+    {
+        "name": "B2",
+        "desc": "beznadzieja",
+        "iconUrl": "../favicon.ico",
+        "ects": 2,
+        "semester": 2,
+        "classType": "wykład",
+        "maxStudents": 120,
+        "rating": 2,
+        "teacher": "nazwisko"
+    },
+    {
+        "name": "A3",
+        "desc": "beznadzieja",
+        "iconUrl": "../favicon.ico",
+        "ects": 2,
+        "semester": 2,
+        "classType": "wykład",
+        "maxStudents": 120,
+        "rating": 2,
+        "teacher": "nazwisko"
+    },
+    {
+        "name": "A4",
+        "desc": "beznadzieja",
+        "iconUrl": "../favicon.ico",
+        "ects": 2,
+        "semester": 2,
+        "classType": "wykład",
+        "maxStudents": 120,
+        "rating": 2,
+        "teacher": "nazwisko"
+    },
+    {
+        "name": "A5",
+        "desc": "beznadzieja",
+        "iconUrl": "../favicon.ico",
+        "ects": 2,
+        "semester": 2,
+        "classType": "wykład",
+        "maxStudents": 120,
+        "rating": 2,
+        "teacher": "nazwisko"
+    },
+    {
+        "name": "A6",
+        "desc": "beznadzieja",
+        "iconUrl": "../favicon.ico",
+        "ects": 2,
+        "semester": 2,
+        "classType": "wykład",
+        "maxStudents": 120,
+        "rating": 2,
+        "teacher": "nazwisko"
+    },
+    {
+        "name": "A7",
+        "desc": "beznadzieja",
+        "iconUrl": "../favicon.ico",
+        "ects": 2,
+        "semester": 2,
+        "classType": "wykład",
+        "maxStudents": 120,
+        "rating": 2,
+        "teacher": "nazwisko"
+    },
+    {
+        "name": "A8",
+        "desc": "beznadzieja",
+        "iconUrl": "../favicon.ico",
+        "ects": 2,
+        "semester": 2,
+        "classType": "wykład",
+        "maxStudents": 120,
+        "rating": 2,
+        "teacher": "nazwisko"
+    },
+    {
+        "name": "A9",
+        "desc": "beznadzieja",
+        "iconUrl": "../favicon.ico",
+        "ects": 2,
+        "semester": 2,
+        "classType": "wykład",
+        "maxStudents": 120,
+        "rating": 2,
+        "teacher": "nazwisko"
+    },
+    {
+        "name": "A10",
+        "desc": "beznadzieja",
+        "iconUrl": "../favicon.ico",
+        "ects": 2,
+        "semester": 2,
+        "classType": "wykład",
+        "maxStudents": 120,
+        "rating": 2,
+        "teacher": "nazwisko"
+    }
+]
