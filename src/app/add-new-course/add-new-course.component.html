@@ -2,11 +2,15 @@
   <h1>{{ formHeader }}</h1>
   <label>
     Nazwa
-    <input type="text" class="form-control" formControlName="name">
+    <input type="text" class="form-control" formControlName="name"
+    [ngClass]="{'in-valid': !myForm.controls['name'].valid && myForm.controls['name'].touched}">
+    <b class="alert" *ngIf="!myForm.controls['name'].valid && myForm.controls['name'].touched">Wprowadź nazwę!</b>
   </label>
   <label>
     Opis
-    <input type="text" class="form-control" formControlName="desc">
+    <input type="text" class="form-control" formControlName="desc"
+    [ngClass]="{'in-valid': !myForm.controls['desc'].valid && myForm.controls['desc'].touched}">
+    <b class="alert" *ngIf="!myForm.controls['desc'].valid && myForm.controls['desc'].touched">Wprowadź opis!</b>
   </label>
   <label>
     Obrazek
@@ -14,20 +18,27 @@
   </label>
   <label>
     ECTS
-    <input type="text" class="form-control" formControlName="ects">
+    <input type="text" class="form-control" formControlName="ects"
+    [ngClass]="{'in-valid': !myForm.controls['ects'].valid && myForm.controls['ects'].touched}">
+    <b class="alert" *ngIf="!myForm.controls['ects'].valid && myForm.controls['ects'].touched">Wprowadź wartość!</b>
   </label>
   <label>
     Semestr
     <input type="text" class="form-control"
-            formControlName="semester">
+            formControlName="semester"
+            [ngClass]="{'in-valid': !myForm.controls['semester'].valid && myForm.controls['semester'].touched}">
+    <b class="alert" *ngIf="!myForm.controls['semester'].valid && myForm.controls['semester'].touched">Wprowadź wartość!</b>
   </label>
   <label>
     Forma zajęć
-    <select class="form-control" formControlName="classType" placeholder="[wybierz]">
+    <select class="form-control" formControlName="classType" placeholder="[wybierz]"
+    [ngClass]="{'in-valid': !myForm.controls['classType'].valid && myForm.controls['classType'].touched}">
+    <b class="alert" *ngIf="!myForm.controls['classType'].valid && myForm.controls['classType'].touched">Wybierz!</b>
       <option>wykład</option>
       <option>laboratorium</option>
       <option>projekt</option>
       <option>ćwiczenia</option>
+      
     </select>
   </label>
   <label>

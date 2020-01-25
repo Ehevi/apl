@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormControl} from '@angular/forms';
+import { FormGroup, FormControl, ReactiveFormsModule, Validators, FormBuilder} from '@angular/forms';
 import { CoursesService } from '../services/courses.service';
 import { Course } from '../types/course';
 
@@ -34,13 +34,13 @@ export class AddNewCourseComponent implements OnInit {
 
   ngOnInit() {
     this.myForm = new FormGroup({
-      name: new FormControl(),
-      desc: new FormControl(),
-      ects: new FormControl(),
-      semester: new FormControl(),
-      classType: new FormControl(),
-      maxStudents: new FormControl(),
-      teacher: new FormControl()
+      name: new FormControl(null, Validators.required),
+      desc: new FormControl(null, Validators.required),
+      ects: new FormControl(null, Validators.required),
+      semester: new FormControl(null, Validators.required),
+      classType: new FormControl(null, Validators.required),
+      maxStudents: new FormControl(null, Validators.required),
+      teacher: new FormControl(null, Validators.required)
     });
   }
 
