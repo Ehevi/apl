@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CoursesService } from '../courses.service';
-import { Courses } from '../Courses';
+import { Course } from '../Courses';
 
 @Component({
   selector: 'app-kurs',
@@ -9,7 +9,7 @@ import { Courses } from '../Courses';
 })
 export class KursComponent implements OnInit {
 
-  coursesArray: Courses[];
+  coursesArray: Course[];
   filterBy = 'type';
   classType = 'all';
 

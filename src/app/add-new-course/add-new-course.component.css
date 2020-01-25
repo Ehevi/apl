@@ -5,10 +5,6 @@ body {
   
   p {line-height: 1.75;}
   
-  a {color: #fed136;}
-  
-  a:hover {color: #fec503;}
-  
   h1,
   h2,
   h3,
@@ -18,7 +14,7 @@ body {
     font-weight: 700;
     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   }
-  
+
   .text-muted {color: #6c757d !important;}
   
   .text-uppercase {text-transform: uppercase !important;}
@@ -51,17 +47,6 @@ body {
     font-family: 'Droid Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   }
   
-  @media (min-width: 768px) {section {padding: 150px 0;}}
-  
-  ::selection {
-    background: #fed136;
-    text-shadow: none;
-  }
-  
-  img::selection {
-    background: transparent;
-  }
-  
   .btn {
     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     font-weight: 700;
@@ -70,17 +55,6 @@ body {
   .btn-xl {
     font-size: 18px;
     padding: 20px 40px;
-  }
-  
-  .btn-primary {
-    background-color: #fed136;
-    border-color: #fed136;
-  }
-  
-  .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
-    background-color: #fec810 !important;
-    border-color: #fec810 !important;
-    color: white;
   }
   
   .btn-primary:active, .btn-primary:focus {
@@ -93,12 +67,6 @@ body {
   }
   
   .bg-light {background-color: #f8f9fa !important;}
-  
-  a.bg-light:hover, a.bg-light:focus,
-  button.bg-light:hover,
-  button.bg-light:focus {
-    background-color: #dae0e5 !important;
-  }
 
   .bg-dark {background-color: #747881}
   
@@ -352,6 +320,16 @@ body {
   ::-webkit-file-upload-button {
     font: inherit;
     -webkit-appearance: button;
+  }
+
+  #addNew {
+    background: pink;
+    width: 200px;
+    height: 50px;
+    padding: 0px;
+    padding-left: 30px;
+    font-size: 30px !important;
+    color: rgb(66, 64, 68);
   }
   
   [hidden]{display: none !important;}
@@ -825,81 +803,7 @@ body {
   
   .close:not(:disabled):not(.disabled):hover, .close:not(:disabled):not(.disabled):focus {opacity: .75;}
   
-  button.close {
-    padding: 0;
-    background-color: transparent;
-    border: 0;
-    -webkit-appearance: none;
-    appearance: none;
-  }
-  
   a.close.disabled {pointer-events: none;}
-  
-  
-  .modal-open .modal {
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
-  
-  .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1050;
-    display: none;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    outline: 0;
-  }
-  
-  .modal-dialog {
-    position: relative;
-    width: auto;
-    margin: 0.5rem;
-    pointer-events: none;
-  }
-  
-  .modal-content {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    width: 100%;
-    pointer-events: auto;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 0.3rem;
-    outline: 0;
-  }
-  
-  .modal-body {
-    position: relative;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    padding: 1rem;
-  }
-  
-  .modal-scrollbar-measure {
-    position: absolute;
-    top: -9999px;
-    width: 50px;
-    height: 50px;
-    overflow: scroll;
-  }
-  
-  @media (min-width: 576px) {
-    .modal-dialog {
-      max-width: 500px;
-      margin: 1.75rem auto;
-    }
-    .modal-dialog-scrollable {max-height: calc(100% - 3.5rem);}
-    .modal-dialog-scrollable .modal-content {max-height: calc(100vh - 3.5rem);}
-    .modal-dialog-centered {min-height: calc(100% - 3.5rem);}
-    .modal-dialog-centered::before {height: calc(100vh - 3.5rem);}
-  }
   
   .rounded-circle {border-radius: 50% !important;}
   

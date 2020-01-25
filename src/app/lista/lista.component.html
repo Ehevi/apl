@@ -2,53 +2,45 @@
   
   <section class="bg-dark page-section" id="pictures">
 
-    <div class="rating-div">
-
-      <div *ngIf="courseRated; else elseBlock">
-          <label>Dziękujemy za Twoją ocenę! </label>
-      </div>
-      <ng-template #elseBlock>
-          <label>Twoja ocena: </label>
-      </ng-template>
-  
-      <select #rating class="rating" [disabled]="courseRated">
-          <option value=0> - </option>
-          <option value=1> 1 </option>
-          <option value=2> 2 </option>
-          <option value=3> 3 </option>
-          <option value=4> 4 </option>
-          <option value=5> 5 </option>
-      </select>
-      <button class="rate-button" (click)="onRate(rating)" [disabled]="courseRated">Oceń kurs</button>
-  </div>
       <h1>KURS</h1>
       <div class="container">
         <div class="row">
         <div class="row text-center pictures-item">
           <div class="col-md-4">
             <div class="pictures-caption">
-            <h4 class="service-heading">Nazwa</h4>
-            <div class="form-group">
-              <input class="form-control" type="password" placeholder="nazwa">
-            </div>
+            <button id="addMe">Zapisz mnie!</button>
           </div>
           </div>
           <div class="col-md-4">
             <div class="pictures-caption">
-            <h4 class="service-heading">Adres e-mail</h4>
-            <div class="form-group">
-              <input class="form-control" type="password" placeholder="e-mail">
-            </div>
+            <div class="rating-div">
+
+              <div *ngIf="courseRated; else elseBlock">
+                <h4 class="service-heading">Dziękujemy za Twoją ocenę!</h4>
+              </div>
+              <ng-template #elseBlock>
+                <h4 class="service-heading">Twoja ocena:</h4>
+              </ng-template>
+          
+              <select #rating class="rating" [disabled]="courseRated">
+                  <option value=0> - </option>
+                  <option value=1> 1 </option>
+                  <option value=2> 2 </option>
+                  <option value=3> 3 </option>
+                  <option value=4> 4 </option>
+                  <option value=5> 5 </option>
+              </select>
+              <button class="rate-button" (click)="onRate(rating)" [disabled]="courseRated">Oceń kurs</button>
           </div>
           </div>
+          </div>
+
           <div class="col-md-4">
             <div class="pictures-caption">
-            <h4 class="service-heading">Hasło</h4>
-            <div class="form-group">
-              <input class="form-control" type="password" placeholder="hasło">
-            </div>
+            <h4>Cieszymy się, że tu trafiłeś! :)</h4>
           </div>
           </div>
+
         </div>
 
         </div>

@@ -10,6 +10,7 @@ import { RejestracjaComponent } from './rejestracja/rejestracja.component';
 import { AddNewCourseComponent } from './add-new-course/add-new-course.component';
 import { BanerComponent } from './baner/baner.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

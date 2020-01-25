@@ -8,7 +8,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase menu-left">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#nothing">Dodaj nowy kurs</a>
+            <a class="nav-link js-scroll-trigger" routerLink="/add-new-course" routerLinkActive="selected-link">Dodaj nowy kurs</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#nothing">Studenci</a>
@@ -32,4 +32,4 @@
     Jesteś zalogowany jako:
   </p>
 </a>
-<a [routerLink]="['/cart']" class="button fancy-button">Zaloguj się</a>
+<a [routerLink]="['/cart']" class="button">Zaloguj się</a>

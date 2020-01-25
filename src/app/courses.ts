@@ -1,4 +1,4 @@
-export interface Courses {
+export interface Course {
     name: string;
     desc: string;
     iconUrl: string;

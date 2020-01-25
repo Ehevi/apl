@@ -1,14 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Courses } from '../Courses';
+import { Course } from '../Courses';
 
 @Component({
   selector: 'app-lista',
   templateUrl: './lista.component.html',
-  styleUrls: ['../kurs/kurs.component.css']
+  styleUrls: ['../rejestracja/rejestracja.component.css']
 })
 export class ListaComponent implements OnInit {
 
-  @Input() public course: Courses;
+  @Input() public course: Course;
 
   courseRated: boolean;
   rating: number;

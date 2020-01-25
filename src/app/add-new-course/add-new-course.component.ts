@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl} from '@angular/forms';
 import { CoursesService } from '../courses.service';
-import { Courses } from 'src/app/Courses';
+import { Course } from 'src/app/Courses';
 
 @Component({
   selector: 'app-add-new-course',
@@ -15,9 +15,9 @@ export class AddNewCourseComponent implements OnInit {
 
   ngOnInit() {
     this.myForm = new FormGroup({
-      name: new FormControl('', Validators.required),
+      name: new FormControl(),
       desc: new FormControl(),
-      ects: new FormControl('', [Validators.required]),
+      ects: new FormControl(),
       semester: new FormControl(),
       classType: new FormControl(),
       maxStudents: new FormControl(),
@@ -26,10 +26,13 @@ export class AddNewCourseComponent implements OnInit {
   }
 
   onSubmit() {
-    const controls = this.myForm.controls;
-    if (controls.name.invalid || controls.ects.invalid || this.myForm.value.type == null) {return; }
-    const inputObject = this.myForm.value;
-    const newCourse: Courses = {
+    let controls = this.myForm.controls;
+    console.dir(this.myForm);
+    if (controls.name.invalid || controls.ects.invalid || this.myForm.value.classType == null) {
+      return;
+    }
+    let inputObject = this.myForm.value;
+    let newCourse: Course = {
       name: inputObject.name,
       desc: inputObject.desc,
       iconUrl: '../../favicon.ico',

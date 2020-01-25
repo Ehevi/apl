@@ -284,10 +284,23 @@ button, input {overflow: visible;}
 
 button {
   text-transform: none;
-  width: 800px;
-  font-size: 30px;
   background: pink;
   color:rgb(66, 64, 68);
+}
+
+#createAccount {
+  width: 800px;
+  font-size: 30px;
+}
+
+#addMe {
+  background: pink;
+  width: 200px;
+  height: 50px;
+  padding: 0px;
+  padding-left: 10px;
+  font-size: 30px !important;
+  color: rgb(66, 64, 68);
 }
 
 button, [type="button"], [type="reset"], [type="submit"] {-webkit-appearance: button;}

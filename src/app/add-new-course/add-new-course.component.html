@@ -1,7 +1,7 @@
 <div class="container">
     
         <section class="bg-dark page-section" id="pictures">
-
+          <form [formGroup]="myForm" (ngSubmit)="onSubmit()" novalidate>
             <h1>DODAJ NOWY KURS</h1>
             <div class="container">
               <div class="row">
@@ -9,13 +9,15 @@
                 <div class="col-md-4">
                   <div class="pictures-caption">
                   <h4 class="service-heading">Nazwa</h4>
-                  <input type="text">
+                  <input type="text" class="form-control"
+                          formControlName="name">
                 </div>
                 </div>
                 <div class="col-md-4">
                   <div class="pictures-caption">
                   <h4 class="service-heading">Opis</h4>
-                  <input type="text">
+                  <input type="text" class="form-control"
+                          formControlName="desc">
                 </div>
                 </div>
                 <div class="col-md-4">
@@ -29,19 +31,22 @@
                 <div class="col-md-4">
                     <div class="pictures-caption">
                     <h4 class="service-heading">ECTS</h4>
-                    <input type="text">
+                    <input type="text" class="form-control"
+                            formControlName="ects">
                   </div>
                   </div>
                 <div class="col-md-4">
                   <div class="pictures-caption">
                   <h4 class="service-heading">Semestr</h4>
-                  <input type="text">
+                  <input type="text" class="form-control"
+                          formControlName="semester">
                 </div>
               </div>
                 <div class="col-md-4">
                   <div class="pictures-caption">
                   <h4 class="service-heading">Forma zajęć</h4>
-                  <select class="form-control">
+                  <select class="form-control"
+                          formControlName="classType">
                       <option>[wybierz]</option>
                       <option>wykład</option>
                       <option>laboratorium</option>
@@ -55,22 +60,25 @@
                 <div class="col-md-4">
                   <div class="pictures-caption">
                   <h4 class="service-heading">Miejsca</h4>
-                  <input type="text">
+                  <input type="text" class="form-control"
+                          formControlName="maxStudents">
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="pictures-caption">
                   <h4 class="service-heading">Prowadzący</h4>
-                  <input type="text">
+                  <input type="text" class="form-control"
+                          formControlName="teacher">
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="pictures-caption">
-                  <button type="submit">Zatwierdź</button>
+                  <button id="addNew" type="submit">Zatwierdź</button>
                   </div>
                 </div>
               </div>
               </div>
             </div>
+            </form>
           </section>
 </div>
