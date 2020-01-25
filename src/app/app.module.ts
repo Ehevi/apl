@@ -9,6 +9,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { RejestracjaComponent } from './rejestracja/rejestracja.component';
 import { AddNewCourseComponent } from './add-new-course/add-new-course.component';
 import { BanerComponent } from './baner/baner.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BanerComponent } from './baner/baner.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
