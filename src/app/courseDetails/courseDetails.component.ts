@@ -1,12 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Course } from '../Courses';
+import { Course } from '../types/course';
 
 @Component({
   selector: 'app-lista',
-  templateUrl: './lista.component.html',
-  styleUrls: ['../rejestracja/rejestracja.component.css']
+  templateUrl: './courseDetails.component.html',
+  styleUrls: []
 })
-export class ListaComponent implements OnInit {
+export class CourseDetailsComponent implements OnInit {
 
   @Input() public course: Course;
 

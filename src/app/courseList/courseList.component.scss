@@ -1,0 +1,44 @@
+.app-course-list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    list-style: none;
+    
+    .course {
+        padding: 20px;
+
+        &:nth-child(even) {
+            background-color: #ccc;
+        }
+    
+        &:nth-child(odd) {
+            background-color: #eee;
+        }
+
+        .basic-info {
+            display: flex;
+            justify-content: space-between;
+
+            .course-icon {
+                flex: 0 0 30px;
+                height: 30px;
+            }
+
+            .course-name {
+                flex: 1 1;
+                margin: 0;
+                padding-left: 30px;
+            }
+        }
+
+        .more-info {
+            display: none;
+
+            &.open {
+                display: block;
+            }
+        }
+    }
+
+
+}

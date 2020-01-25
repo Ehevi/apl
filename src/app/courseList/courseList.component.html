@@ -1,0 +1,21 @@
+<ul class="app-course-list">
+  <!-- Kurs  --->
+  <li class="course" *ngFor="let course of coursesArray; index as idx">
+    <div class="basic-info">
+      <img class="course-icon" src="{{ course.iconUrl }}" />
+      <h1 class="course-name">{{ course.name }}</h1>
+      <button (click)="onCourseOpened(course.id)">Więcej info</button>
+      <button (click)="onCourseEdited(course.id)">Edytuj</button>
+      <button (click)="onCourseDeleted(course.id)">Usuń</button>
+    </div>
+    <div class="{{ openedCourseId == course.id ? 'more-info open' : 'more-info' }}">
+      <p class="field-desc">{{course.desc}}</p>
+      <p class="field-ects">ECTS: {{course.ects}}</p>
+      <p class="field-senester">Senestr: {{course.senester}}</p>
+      <p class="field-classType">Tyoe of class: {{course.classType}}</p>
+      <p class="field-maxStudents">Max students: {{course.maxStudents}}</p>
+      <p class="field-rating">Rating: {{course.rating}}</p>
+      <p class="field-teacher">Teacher: {{course.teacher}}</p>
+    </div>
+  </li>
+</ul>

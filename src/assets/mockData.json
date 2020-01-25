@@ -1,5 +1,6 @@
 [
     {
+        "id": 0,
         "name": "A",
         "desc": "beznadzieja",
         "iconUrl": "../favicon.ico",
@@ -11,6 +12,7 @@
         "teacher": "nazwisko"
     },
     {
+        "id": 1,
         "name": "B2",
         "desc": "beznadzieja",
         "iconUrl": "../favicon.ico",
@@ -22,6 +24,7 @@
         "teacher": "nazwisko"
     },
     {
+        "id": 2,
         "name": "A3",
         "desc": "beznadzieja",
         "iconUrl": "../favicon.ico",
@@ -33,6 +36,7 @@
         "teacher": "nazwisko"
     },
     {
+        "id": 3,
         "name": "A4",
         "desc": "beznadzieja",
         "iconUrl": "../favicon.ico",
@@ -44,6 +48,7 @@
         "teacher": "nazwisko"
     },
     {
+        "id": 4,
         "name": "A5",
         "desc": "beznadzieja",
         "iconUrl": "../favicon.ico",
@@ -55,6 +60,7 @@
         "teacher": "nazwisko"
     },
     {
+        "id": 5,
         "name": "A6",
         "desc": "beznadzieja",
         "iconUrl": "../favicon.ico",
@@ -66,6 +72,7 @@
         "teacher": "nazwisko"
     },
     {
+        "id": 6,
         "name": "A7",
         "desc": "beznadzieja",
         "iconUrl": "../favicon.ico",
@@ -77,6 +84,7 @@
         "teacher": "nazwisko"
     },
     {
+        "id": 7,
         "name": "A8",
         "desc": "beznadzieja",
         "iconUrl": "../favicon.ico",
@@ -88,6 +96,7 @@
         "teacher": "nazwisko"
     },
     {
+        "id": 8,
         "name": "A9",
         "desc": "beznadzieja",
         "iconUrl": "../favicon.ico",
@@ -99,6 +108,7 @@
         "teacher": "nazwisko"
     },
     {
+        "id": 9,
         "name": "A10",
         "desc": "beznadzieja",
         "iconUrl": "../favicon.ico",

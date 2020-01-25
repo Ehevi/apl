@@ -1,0 +1,6 @@
+<div class="app-home-page">
+    <app-course-list (editCourse)="onCourseEditTriggered($event)"></app-course-list>
+    <aside>
+        <app-add-new-course editingId={{editingId}} (editCancelled)="onEditCancelled()" (editSuccessful)="onEditSuccessful()"></app-add-new-course>
+    </aside>
+</div>
