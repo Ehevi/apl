@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CourseListComponent } from './courseList/courseList.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     RejestracjaComponent,
     AddNewCourseComponent,
     BanerComponent,
-    HomePageComponent
+    HomePageComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
