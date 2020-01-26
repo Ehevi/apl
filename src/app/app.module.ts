@@ -7,7 +7,6 @@ import { CourseDetailsComponent } from './courseDetails/courseDetails.component'
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { RejestracjaComponent } from './rejestracja/rejestracja.component';
 import { AddNewCourseComponent } from './add-new-course/add-new-course.component';
-import { BanerComponent } from './baner/baner.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CourseListComponent } from './courseList/courseList.component';
@@ -23,7 +22,6 @@ import { StudentPanelComponent } from './student-panel/student-panel.component';
     TopBarComponent,
     RejestracjaComponent,
     AddNewCourseComponent,
-    BanerComponent,
     HomePageComponent,
     SearchComponent,
     StudentPanelComponent
