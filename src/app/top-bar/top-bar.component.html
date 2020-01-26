@@ -18,9 +18,12 @@
     </div>
   </nav>
 
-<p class="zalogowany">Jesteś zalogowany jako:</p>
+<div class="zalogowany">
+  <p>Jesteś zalogowany jako: ...</p>
+  <a routerLink="/no-account" routerLinkActive="selected-link" class="button">Wyloguj się</a>
+</div>
 
 <div class="niezalogowany">
-<a routerLink="/login" routerLinkActive="selected-link" class="button">Zaloguj się</a>
-<a routerLink="/rejestracja" routerLinkActive="selected-link" class="button">Zarejestruj się</a>
+  <a routerLink="/login" routerLinkActive="selected-link" class="button">Zaloguj się</a>
+  <a routerLink="/rejestracja" routerLinkActive="selected-link" class="button">Zarejestruj się</a>
 </div>
