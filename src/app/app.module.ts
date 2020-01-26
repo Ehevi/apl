@@ -13,6 +13,8 @@ import { CourseListComponent } from './courseList/courseList.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { SearchComponent } from './search/search.component';
 import { StudentPanelComponent } from './student-panel/student-panel.component';
+import { NoAccountComponent } from './no-account/no-account.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { StudentPanelComponent } from './student-panel/student-panel.component';
     AddNewCourseComponent,
     HomePageComponent,
     SearchComponent,
-    StudentPanelComponent
+    StudentPanelComponent,
+    NoAccountComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

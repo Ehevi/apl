@@ -11,16 +11,16 @@
             <a class="nav-link js-scroll-trigger" routerLink="/student-panel" routerLinkActive="selected-link">Studenci</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" routerLink="/rejestracja" routerLinkActive="selected-link">Rejestracja</a>
+            <a class="nav-link js-scroll-trigger" routerLink="/no-account" routerLinkActive="selected-link">Użytkownicy niezalogowani</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-<a>
-  <p class="zalogowany">
-    Jesteś zalogowany jako:
-  </p>
-</a>
-<a [routerLink]="['/cart']" class="button">Zaloguj się</a>
+<p class="zalogowany">Jesteś zalogowany jako:</p>
+
+<div class="niezalogowany">
+<a routerLink="/login" routerLinkActive="selected-link" class="button">Zaloguj się</a>
+<a routerLink="/rejestracja" routerLinkActive="selected-link" class="button">Zarejestruj się</a>
+</div>
