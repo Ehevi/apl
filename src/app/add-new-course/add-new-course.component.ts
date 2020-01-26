@@ -36,6 +36,7 @@ export class AddNewCourseComponent implements OnInit {
     this.myForm = new FormGroup({
       name: new FormControl(null, Validators.required),
       desc: new FormControl(null, Validators.required),
+      iconUrl: new FormControl(null, Validators.required),
       ects: new FormControl(null, Validators.required),
       semester: new FormControl(null, Validators.required),
       classType: new FormControl(null, Validators.required),

@@ -14,8 +14,8 @@
   </label>
   <label>
     Obrazek
-    <input type="text">
-    <b class="alert-green" *ngIf="!myForm.controls['desc'].valid && myForm.controls['desc'].touched">Akurat obrazek jest zbędny ;)</b>
+    <input type="text" class="form-control" formControlName="iconUrl">
+    <b class="alert-green" *ngIf="myForm.controls['iconUrl'].touched">Akurat obrazek jest zbędny ;)</b>
   </label>
   <label>
     ECTS
