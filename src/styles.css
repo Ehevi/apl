@@ -49,6 +49,11 @@
     height: 35px;
     width: 235px;
   }
+
+  .checkbox {
+    width: 20px;
+    height: 20px;
+  }
   
   /* Button */
   .button, button {
