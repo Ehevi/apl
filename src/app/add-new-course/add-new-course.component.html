@@ -34,6 +34,7 @@
     Forma zajęć
     <select class="form-control" formControlName="classType" placeholder="[wybierz]"
     [ngClass]="{'in-valid': !myForm.controls['classType'].valid && myForm.controls['classType'].touched}">
+      <option value=null disabled>[wybierz]</option>
       <option>wykład</option>
       <option>laboratorium</option>
       <option>projekt</option>
