@@ -2,7 +2,7 @@
   <h1>{{ formHeader }}</h1>
   <label>
     Nazwa
-    <input type="text" class="form-control" formControlName="name"
+    <input type="text"  class="form-control" formControlName="name"
     [ngClass]="{'in-valid': !myForm.controls['name'].valid && myForm.controls['name'].touched}">
     <b class="alert" *ngIf="!myForm.controls['name'].valid && myForm.controls['name'].touched">Wprowadź nazwę!</b>
   </label>
@@ -15,6 +15,7 @@
   <label>
     Obrazek
     <input type="text">
+    <b class="alert-green" *ngIf="!myForm.controls['desc'].valid && myForm.controls['desc'].touched">Akurat obrazek jest zbędny ;)</b>
   </label>
   <label>
     ECTS
@@ -33,21 +34,25 @@
     Forma zajęć
     <select class="form-control" formControlName="classType" placeholder="[wybierz]"
     [ngClass]="{'in-valid': !myForm.controls['classType'].valid && myForm.controls['classType'].touched}">
-    <b class="alert" *ngIf="!myForm.controls['classType'].valid && myForm.controls['classType'].touched">Wybierz!</b>
       <option>wykład</option>
       <option>laboratorium</option>
       <option>projekt</option>
       <option>ćwiczenia</option>
-      
+
     </select>
+    <b class="alert" *ngIf="!myForm.controls['classType'].valid && myForm.controls['classType'].touched">Wybierz!</b>
   </label>
   <label>
     Miejsca
-    <input type="text" class="form-control" formControlName="maxStudents">
+    <input type="text" class="form-control" formControlName="maxStudents"
+    [ngClass]="{'in-valid': !myForm.controls['maxStudents'].valid && myForm.controls['maxStudents'].touched}">
+    <b class="alert" *ngIf="!myForm.controls['maxStudents'].valid && myForm.controls['maxStudents'].touched">Wprowadź wartość!</b>
   </label>
   <label>
     Prowadzący
-    <input type="text" class="form-control" formControlName="teacher">
+    <input type="text" class="form-control" formControlName="teacher"
+    [ngClass]="{'in-valid': !myForm.controls['teacher'].valid && myForm.controls['teacher'].touched}">
+    <b class="alert" *ngIf="!myForm.controls['teacher'].valid && myForm.controls['teacher'].touched">Wprowadź wartość!</b>
   </label>
   <button type="submit">Zatwierdź</button>
   <button *ngIf="editingId != -1" type="button" (click)="onEditCancelled()">Anuluj</button>

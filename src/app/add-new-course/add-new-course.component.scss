@@ -17,10 +17,16 @@ form {
   }
 }
 
-.in.valid {
-  border: 1px solid #ff0000;
+.in-valid {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ff0000;
 }
 
 .alert {
   color: #ff0000;
+}
+
+.alert-green {
+  color: green;
 }
