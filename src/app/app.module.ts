@@ -13,6 +13,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CourseListComponent } from './courseList/courseList.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { SearchComponent } from './search/search.component';
+import { StudentPanelComponent } from './student-panel/student-panel.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SearchComponent } from './search/search.component';
     AddNewCourseComponent,
     BanerComponent,
     HomePageComponent,
-    SearchComponent
+    SearchComponent,
+    StudentPanelComponent
   ],
   imports: [
     BrowserModule,

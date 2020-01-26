@@ -1,49 +1,22 @@
 <div class="container">
-  
-  <section class="bg-dark page-section" id="pictures">
-
-      <h1>KURS</h1>
-      <div class="container">
-        <div class="row">
-        <div class="row text-center pictures-item">
-          <div class="col-md-4">
-            <div class="pictures-caption">
-            <button id="addMe">Zapisz mnie!</button>
-          </div>
-          </div>
-          <div class="col-md-4">
-            <div class="pictures-caption">
-            <div class="rating-div">
-
-              <div *ngIf="courseRated; else elseBlock">
-                <h4 class="service-heading">Dziękujemy za Twoją ocenę!</h4>
-              </div>
-              <ng-template #elseBlock>
-                <h4 class="service-heading">Twoja ocena:</h4>
-              </ng-template>
+  <h1>Co może student:</h1>
+      <button class="addMe">Zapisz mnie!</button>
+        <div *ngIf="courseRated; else elseBlock">
+          <h4 class="service-heading">Dziękujemy za Twoją ocenę!</h4>
+        </div>
+        <ng-template #elseBlock>
+          <h4 class="service-heading">Twoja ocena:</h4>
+        </ng-template>
           
-              <select #rating class="rating" [disabled]="courseRated">
-                  <option value=0> - </option>
-                  <option value=1> 1 </option>
-                  <option value=2> 2 </option>
-                  <option value=3> 3 </option>
-                  <option value=4> 4 </option>
-                  <option value=5> 5 </option>
-              </select>
-              <button class="rate-button" (click)="onRate(rating)" [disabled]="courseRated">Oceń kurs</button>
-          </div>
-          </div>
-          </div>
+        <select #rating class="rating" [disabled]="courseRated">
+          <option value=0> - </option>
+          <option value=1> 1 </option>
+          <option value=2> 2 </option>
+          <option value=3> 3 </option>
+          <option value=4> 4 </option>
+          <option value=5> 5 </option>
+        </select>
 
-          <div class="col-md-4">
-            <div class="pictures-caption">
-            <h4>Cieszymy się, że tu trafiłeś! :)</h4>
-          </div>
-          </div>
+      <button class="rate-button" (click)="onRate(rating)" [disabled]="courseRated">Oceń kurs</button>
 
-        </div>
-
-        </div>
-      </div>
-    </section>
 </div>

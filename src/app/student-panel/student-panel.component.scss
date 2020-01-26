@@ -1,0 +1,15 @@
+:host {
+    width: 100%;
+}
+
+.app-student-page {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    // Wszystkie moje bezpośrednie dzieci
+    & > * {
+        flex: 1 1 auto;
+        margin: 0 50px;
+    }
+}
