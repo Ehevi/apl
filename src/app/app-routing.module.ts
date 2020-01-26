@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { AddNewCourseComponent } from './add-new-course/add-new-course.component';
 import { CourseListComponent } from './courseList/courseList.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { SearchComponent } from './search/search.component';
 import { StudentPanelComponent } from './student-panel/student-panel.component';
 import { RejestracjaComponent } from './rejestracja/rejestracja.component';
 
@@ -11,7 +10,6 @@ import { RejestracjaComponent } from './rejestracja/rejestracja.component';
 const routes: Routes = [
   {path: 'add-new-course', component: AddNewCourseComponent},
   {path: '', component: HomePageComponent},
-  {path: 'search', component: SearchComponent},
   {path: 'student-panel', component: StudentPanelComponent},
   {path: 'rejestracja', component: RejestracjaComponent}
 ];
@@ -21,4 +19,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [AddNewCourseComponent, CourseListComponent, SearchComponent, StudentPanelComponent, RejestracjaComponent];
+export const routingComponents = [AddNewCourseComponent, CourseListComponent, StudentPanelComponent, RejestracjaComponent];
