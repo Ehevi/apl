@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CoursesService } from '../services/courses.service';
 import { Course } from '../types/course';
+import { StarsComponent } from '../stars/stars.component';
 
 @Component({
   selector: 'app-course-list',
@@ -13,6 +14,7 @@ export class CourseListComponent implements OnInit {
   filterBy = 'type';
   classType = 'all';
   openedCourseId = -1;
+  stars: StarsComponent;
 
   @Output() editCourse = new EventEmitter<number>();
 

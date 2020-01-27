@@ -15,6 +15,7 @@ import { SearchComponent } from './search/search.component';
 import { StudentPanelComponent } from './student-panel/student-panel.component';
 import { NoAccountComponent } from './no-account/no-account.component';
 import { LoginComponent } from './login/login.component';
+import { StarsComponent } from './stars/stars.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { LoginComponent } from './login/login.component';
     SearchComponent,
     StudentPanelComponent,
     NoAccountComponent,
-    LoginComponent
+    LoginComponent,
+    StarsComponent
   ],
   imports: [
     BrowserModule,
