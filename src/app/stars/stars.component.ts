@@ -8,13 +8,16 @@ import { Component, OnInit } from '@angular/core';
 export class StarsComponent implements OnInit {
 
   stars;
+  courseRated: boolean;
+  rating: number;
   constructor() { }
 
   ngOnInit() {
+    this.courseRated = false;
     this.stars = document.querySelectorAll('#rating span');
     for (let i = 0; i < this.stars.length; i++) {
     this.stars[i].setAttribute('data-count', i);
-    this.stars[i].addEventListener('mouseenter', this.enterStarListener.bind(this));}
+    this.stars[i].addEventListener('mouseenter', this.enterStarListener.bind(this)); }
     document.querySelector('#rating').addEventListener('mouseleave', this.leaveStarListener.bind(this));
   }
 
