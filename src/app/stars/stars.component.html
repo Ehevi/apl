@@ -1,11 +1,5 @@
 <div class="main">
-    <div id="rating">
-        <span>★</span>
-        <span>★</span>
-        <span>★</span>
-        <span>★</span>
-        <span>★</span>
-        <span>★</span>
-        <span>★</span>
+    <div class="rating" (mouseleave)="onMouseLeave()" (click)="onRated()">
+        <span *ngFor="let star of stars; let i=index" (mouseenter)="onStarHover(i)" [ngClass]="{'hover': i <= rating }">★</span>
     </div>
 </div>

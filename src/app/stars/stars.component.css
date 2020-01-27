@@ -4,13 +4,13 @@
     overflow: hidden;
   }
   
-  #rating {
+  .rating {
     text-align: center;
     perspective: 250px;
     width: 100%;
   }
   
-  #rating span {
+  .rating span {
     cursor: pointer;
     font-size: 50px;
     padding: 0 10px;
@@ -22,7 +22,7 @@
     transform-origin: center bottom;
   }
   
-  #rating span.hover {
+  .rating span.hover {
     color: gold;
     opacity: 1;
     transform: rotateX(0deg);

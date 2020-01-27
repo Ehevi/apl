@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Permissions } from '../types/permissions';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-top-bar',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopBarComponent implements OnInit {
 
-  constructor() { }
+  private permissions: Permissions = Permissions.LOGGED_OUT;
+
+  constructor(private authService: AuthService) {
+    this.authService.getPermissions().subscribe(perm => this.permissions = perm);
+  }
 
   ngOnInit() {
+  }
+
+  isStudent(): boolean {
+    return this.permissions === Permissions.STUDENT;
+  }
+
+  isAdmin(): boolean {
+    return this.permissions === Permissions.ADMIN;
+  }
+
+  noAccount(): boolean {
+    return this.permissions === Permissions.LOGGED_OUT;
   }
 
 }

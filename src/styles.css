@@ -13,6 +13,10 @@
     flex-direction: row;
   }
   
+  .hide {
+    display: none !important;
+  }
+
   router-outlet + *  {
     padding: 0 16px;
   }
@@ -95,120 +99,4 @@
   app-top-bar h1 {
     color: white;
     margin: 0;
-  }
-
-  .menu-left {margin-left: auto !important;}
-
-  .nav {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-  }
-  
-  .nav-link {
-    display: block;
-    padding: 0.5rem 1rem;
-  }
-  
-  .nav-link:hover, .nav-link:focus {text-decoration: none;}
-  
-  .nav-link.disabled {
-    color: #6c757d;
-    pointer-events: none;
-    cursor: default;
-  }
-  
-  .navbar {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    padding: 0.5rem 1rem;
-  }
-  
-  .navbar > .container,
-  .navbar > .container-fluid {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-  }
-  
-  .navbar-nav {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-  }
-  
-  .navbar-nav .nav-link {
-    padding-right: 0;
-    padding-left: 0;
-  }
-  
-  .navbar-nav .dropdown-menu {
-    position: static;
-    float: none;
-  }
-  
-  .navbar-collapse {
-    -ms-flex-preferred-size: 100%;
-    flex-basis: 100%;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    -ms-flex-align: center;
-    align-items: center;
-  }
-  
-  .navbar-toggler {
-    padding: 0.25rem 0.75rem;
-    font-size: 1.25rem;
-    line-height: 1;
-    background-color: transparent;
-    border: 1px solid transparent;
-    border-radius: 0.25rem;
-  }
-  
-  .navbar-toggler:hover, .navbar-toggler:focus {text-decoration: none;}
-
-  .navbar-expand-lg {
-      -ms-flex-flow: row nowrap;
-      flex-flow: row nowrap;
-      -ms-flex-pack: start;
-      justify-content: flex-start;
-  }
-  .navbar-expand-lg .navbar-nav {
-      -ms-flex-direction: row;
-      flex-direction: row;
-  }
-  .navbar-expand-lg .navbar-nav .nav-link {
-      padding-right: 0.5rem;
-      padding-left: 0.5rem;
-  }
-  .navbar-expand-lg > .container,
-  .navbar-expand-lg > .container-fluid {
-      -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  }
-  .navbar-expand-lg .navbar-collapse {
-      display: -ms-flexbox !important;
-      display: flex !important;
-      -ms-flex-preferred-size: auto;
-      flex-basis: auto;
   }
