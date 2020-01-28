@@ -4,12 +4,12 @@
 
 <div class="log-in-out" *ngIf="isStudent()">
   <p>Jesteś zalogowany jako student</p>
-  <a routerLink="/no-account" routerLinkActive="selected-link" class="button">Wyloguj się</a>
+  <a class="button">Wyloguj się</a>
 </div>
 
 <div class="log-in-out" *ngIf="isAdmin()">
   <p>Jesteś zalogowany jako administrator</p>
-  <a routerLink="/no-account" routerLinkActive="selected-link" class="button">Wyloguj się</a>
+  <a class="button">Wyloguj się</a>
 </div>
 
 <div class="log-in-out" *ngIf="noAccount()">

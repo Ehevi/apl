@@ -1,5 +1,15 @@
 <div class="main">
+    <div *ngIf="courseRated; else elseBlock">
+        <h4>Dziękujemy za Twoją ocenę!</h4>
+    </div>
+    <ng-template #elseBlock>
+        <h4>Oceń ten kurs:</h4>
+    </ng-template>
     <div class="rating" (mouseleave)="onMouseLeave()" (click)="onRated()">
         <span *ngFor="let star of stars; let i=index" (mouseenter)="onStarHover(i)" [ngClass]="{'hover': i <= rating }">★</span>
+    </div>
+    <div class="rat" *ngIf="courseRated">
+        <p>Oceniłeś ten kurs na:</p>
+        <h2>{{ this.rating + 1 }}</h2>
     </div>
 </div>

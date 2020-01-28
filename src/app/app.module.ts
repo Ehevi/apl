@@ -12,7 +12,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CourseListComponent } from './courseList/courseList.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { SearchComponent } from './search/search.component';
-import { NoAccountComponent } from './no-account/no-account.component';
 import { LoginComponent } from './login/login.component';
 import { StarsComponent } from './stars/stars.component';
 
@@ -26,7 +25,6 @@ import { StarsComponent } from './stars/stars.component';
     AddNewCourseComponent,
     HomePageComponent,
     SearchComponent,
-    NoAccountComponent,
     LoginComponent,
     StarsComponent
   ],

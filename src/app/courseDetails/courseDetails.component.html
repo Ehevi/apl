@@ -1,23 +1,5 @@
 <div class="student-options">
-  <h1>Co może student:</h1>
       <p>Jesteś uczestnikiem tego kursu :)</p>
       <button class="addMe">Zapisz mnie!</button>
-        <div *ngIf="courseRated; else elseBlock">
-          <h4 class="service-heading">Dziękujemy za Twoją ocenę!</h4>
-        </div>
-        <ng-template #elseBlock>
-          <h4 class="service-heading">Twoja ocena:</h4>
-        </ng-template>
-        <app-stars></app-stars>
-        <select #rating class="rating" [disabled]="courseRated">
-          <option value=0> - </option>
-          <option value=1> 1 </option>
-          <option value=2> 2 </option>
-          <option value=3> 3 </option>
-          <option value=4> 4 </option>
-          <option value=5> 5 </option>
-        </select>
-
-      <button class="rate-button" (click)="onRate(rating)" [disabled]="courseRated">Oceń kurs</button>
-
+      <app-stars></app-stars>
 </div>
