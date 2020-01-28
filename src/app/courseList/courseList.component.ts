@@ -1,7 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CoursesService } from '../services/courses.service';
 import { Course } from '../types/course';
-import { StarsComponent } from '../stars/stars.component';
+import { Permissions } from '../types/permissions';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-course-list',
@@ -10,15 +11,17 @@ import { StarsComponent } from '../stars/stars.component';
 })
 export class CourseListComponent implements OnInit {
 
+  private permissions: Permissions = Permissions.LOGGED_OUT;
   coursesArray: Course[];
   filterBy = 'type';
   classType = 'all';
   openedCourseId = -1;
-  stars: StarsComponent;
 
   @Output() editCourse = new EventEmitter<number>();
 
-  constructor(private coursesService: CoursesService) { }
+  constructor(private coursesService: CoursesService, private authservice: AuthService) {
+    this.authservice.getPermissions().subscribe(perm => this.permissions = perm);
+  }
 
   ngOnInit() {
     this.coursesService.getCourses().subscribe(data => {
@@ -42,4 +45,11 @@ export class CourseListComponent implements OnInit {
     this.coursesService.deleteCourse(id);
   }
 
+  isStudent(): boolean {
+    return this.permissions === Permissions.STUDENT;
+  }
+
+  isAdmin(): boolean {
+    return this.permissions === Permissions.ADMIN;
+  }
 }

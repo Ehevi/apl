@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Permissions } from '../types/permissions';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-home-page',
@@ -8,8 +10,11 @@ import { Component, OnInit } from '@angular/core';
 export class HomePageComponent implements OnInit {
 
   private editingId = -1;
+  private permissions: Permissions = Permissions.LOGGED_OUT;
 
-  constructor() { }
+  constructor(private authService: AuthService) {
+    this.authService.getPermissions().subscribe(perm => this.permissions = perm);
+  }
 
   ngOnInit() {
   }
@@ -26,4 +31,7 @@ export class HomePageComponent implements OnInit {
     this.editingId = -1;
   }
 
+  isAdmin(): boolean {
+    return this.permissions === Permissions.ADMIN;
+  }
 }

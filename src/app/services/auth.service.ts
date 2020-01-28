@@ -10,7 +10,7 @@ export class AuthService {
   private permissions: BehaviorSubject<Permissions>;
 
   constructor() {
-    this.permissions = new BehaviorSubject(Permissions.ADMIN);
+    this.permissions = new BehaviorSubject(Permissions.STUDENT);
   }
 
   getPermissions(): Observable<Permissions> {
