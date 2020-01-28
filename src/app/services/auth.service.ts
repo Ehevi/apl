@@ -10,9 +10,10 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
 
-  private permissions: BehaviorSubject<Permissions>;
+  public permissions: BehaviorSubject<Permissions>;
   userData: any;
 
   constructor(
@@ -31,7 +32,7 @@ export class AuthService {
         JSON.parse(localStorage.getItem('user'));
       }
     });
-    this.permissions = new BehaviorSubject(Permissions.LOGGED_OUT);
+    this.permissions = new BehaviorSubject(Permissions.STUDENT);
   }
 
   getPermissions(): Observable<Permissions> {
@@ -41,10 +42,10 @@ export class AuthService {
    LogIn(email, password) {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then((result) => {
+        this.SetUserData(result.user);
         this.ngZone.run(() => {
           this.router.navigate(['dashboard']);
         });
-        this.SetUserData(result.user);
       }).catch((error) => {
         window.alert(error.message);
       });
@@ -66,13 +67,10 @@ export class AuthService {
 
   SetUserData(user) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
-    this.permissions = user.typeofuser;
     const userData: User = {
       uid: user.uid,
       email: user.email,
-      displayName: user.displayName,
-      semester: user.semester,
-      typeofuser: user.typeofuser,
+      displayName: user.displayName
     };
     return userRef.set(userData, {
       merge: true
@@ -83,7 +81,7 @@ export class AuthService {
     return this.afAuth.auth.signOut().then(() => {
       localStorage.removeItem('user');
       this.permissions = new BehaviorSubject(Permissions.LOGGED_OUT);
-      this.router.navigate(['sign-in']);
+      this.router.navigate(['']);
     });
   }
 

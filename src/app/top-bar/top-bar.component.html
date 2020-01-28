@@ -4,15 +4,17 @@
 
 <div class="log-in-out" *ngIf="isStudent()">
   <p>Jesteś zalogowany jako student</p>
-  <a class="button">Wyloguj się</a>
+  <button class="button" routerLink="/dashboard" routerLinkActive="selected-link">Mój profil</button>
+  <button class="button" (click)="this.authService.LogOut(); this.permissions=Permissions.LOGGED_OUT">Wyloguj się</button>
 </div>
 
 <div class="log-in-out" *ngIf="isAdmin()">
   <p>Jesteś zalogowany jako administrator</p>
-  <a class="button">Wyloguj się</a>
+  <button class="button" routerLink="/dashboard" routerLinkActive="selected-link">Mój profil</button>
+  <button class="button" (click)="this.authService.LogOut(); this.permissions=Permissions.LOGGED_OUT">Wyloguj się</button>
 </div>
 
 <div class="log-in-out" *ngIf="noAccount()">
-  <a routerLink="/login" routerLinkActive="selected-link" class="button">Zaloguj się</a>
-  <a routerLink="/rejestracja" routerLinkActive="selected-link" class="button">Zarejestruj się</a>
+  <a routerLink="/login" routerLinkActive="selected-link" class="button">Logowanie</a>
+  <a routerLink="/rejestracja" routerLinkActive="selected-link" class="button">Rejestracja</a>
 </div>

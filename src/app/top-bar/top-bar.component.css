@@ -1,6 +1,7 @@
 .log-in-out {
     display: flex;
     justify-content: space-around;
+    align-items: baseline;
 }
 
 p {color: white;}

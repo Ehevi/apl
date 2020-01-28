@@ -1,28 +1,24 @@
 <div class="app-login-page">
-    <div>
-        <app-search></app-search>
-        <app-course-list></app-course-list>
-    </div>
-    <aside>
-        <h1>ZALOGUJ SIĘ</h1>
-        <form>
-          <label>
-            Nazwa użytkownika:
-            <input type="text">
-          </label>
-          <label>
-            Adres e-mail:
-            <input type="text">
-          </label>
-          <label>
-            Hasło:
-            <input type="text">
-          </label>
-          <label>
-            Administrator:
-            <input type="checkbox" class="checkbox">
-          </label>
-          <button type="submit">Zaloguj się</button>
-        </form>
-    </aside>
+  <div>
+      <app-search></app-search>
+      <app-course-list></app-course-list>
   </div>
+  <aside>
+      <h1>ZALOGUJ SIĘ</h1>
+      <form>
+        <label>
+          Nazwa użytkownika:
+          <input type="text" class="formControl" #userName required>
+        </label>
+        <label>
+          Hasło:
+          <input type="password" class="formControl" #userPassword required>
+        </label>
+       <label>
+          Administrator:
+          <input type="checkbox" class="checkbox">
+       </label>
+        <button class="button" value="Log in" (click)="authService.LogIn(userName.value, userPassword.value)">Zaloguj się</button>
+      </form>
+  </aside>
+</div>

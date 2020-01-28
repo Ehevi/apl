@@ -2,6 +2,4 @@ export interface User {
     uid: string;
     email: string;
     displayName: string;
-    semester: number;
-    typeofuser: Permissions;
 }

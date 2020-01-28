@@ -9,9 +9,11 @@ import { AuthService } from '../services/auth.service';
 })
 export class TopBarComponent implements OnInit {
 
-  private permissions: Permissions = Permissions.LOGGED_OUT;
+  public permissions: Permissions = Permissions.LOGGED_OUT;
+  public authService: AuthService;
 
-  constructor(private authService: AuthService) {
+  constructor(gotAuthService: AuthService) {
+    this.authService = gotAuthService;
     this.authService.getPermissions().subscribe(perm => this.permissions = perm);
   }
 

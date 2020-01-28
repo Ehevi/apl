@@ -7,20 +7,12 @@
       <h1>UTWÓRZ KONTO</h1>
       <form>
         <label>
-          Nazwa użytkownika:
-          <input type="text">
-        </label>
-        <label>
           Adres e-mail:
-          <input type="text">
+          <input type="email" class="formControl" #userEmail required>
         </label>
         <label>
           Hasło:
-          <input type="text">
-        </label>
-        <label>
-          Aktualny semestr:
-          <input type="text">
+          <input type="password" class="formControl" #userPwd required>
         </label>
         <label>
           Zapoznałem się z regulaminem: 
@@ -39,7 +31,7 @@
           <option>who cares anyway</option>
         </select>
       </label>
-        <button type="submit">Zatwierdź</button>
+        <button class="button" value="Sign Up" (click)="authService.Register(userEmail.value, userPwd.value)">Zatwierdź</button>
       </form>
   </aside>
 </div>

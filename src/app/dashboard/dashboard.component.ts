@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../types/user';
 
 @Component({
   selector: 'app-dashboard',
