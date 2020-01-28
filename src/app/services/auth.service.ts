@@ -6,14 +6,14 @@ import { auth } from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
+import { PermsService } from './perms.service';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class AuthService {
-
-  public permissions: BehaviorSubject<Permissions>;
+  permsService: PermsService;
   userData: any;
 
   constructor(
@@ -22,6 +22,7 @@ export class AuthService {
     public router: Router,
     public ngZone: NgZone
   ) {
+    this.permsService = new PermsService();
     this.afAuth.authState.subscribe(user => {
       if (user) {
         this.userData = user;
@@ -32,11 +33,6 @@ export class AuthService {
         JSON.parse(localStorage.getItem('user'));
       }
     });
-    this.permissions = new BehaviorSubject(Permissions.STUDENT);
-  }
-
-  getPermissions(): Observable<Permissions> {
-    return this.permissions;
   }
 
    LogIn(email, password) {
@@ -45,6 +41,7 @@ export class AuthService {
         this.SetUserData(result.user);
         this.ngZone.run(() => {
           this.router.navigate(['dashboard']);
+          this.permsService.updatePermission(Permissions.STUDENT);
         });
       }).catch((error) => {
         window.alert(error.message);
@@ -62,7 +59,7 @@ export class AuthService {
 
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
-    return (user !== null);
+    return (user !== null) ? true : false;
   }
 
   SetUserData(user) {
@@ -80,7 +77,7 @@ export class AuthService {
   LogOut() {
     return this.afAuth.auth.signOut().then(() => {
       localStorage.removeItem('user');
-      this.permissions = new BehaviorSubject(Permissions.LOGGED_OUT);
+      this.userData.permissions = new BehaviorSubject(Permissions.LOGGED_OUT);
       this.router.navigate(['']);
     });
   }

@@ -3,6 +3,7 @@ import { CoursesService } from '../services/courses.service';
 import { Course } from '../types/course';
 import { Permissions } from '../types/permissions';
 import { AuthService } from '../services/auth.service';
+import { PermsService } from '../services/perms.service';
 
 @Component({
   selector: 'app-course-list',
@@ -19,8 +20,8 @@ export class CourseListComponent implements OnInit {
 
   @Output() editCourse = new EventEmitter<number>();
 
-  constructor(private coursesService: CoursesService, private authservice: AuthService) {
-    this.authservice.getPermissions().subscribe(perm => this.permissions = perm);
+  constructor(private coursesService: CoursesService, private permsservice: PermsService) {
+    this.permsservice.getPermissions().subscribe(perm => this.permissions = perm);
   }
 
   ngOnInit() {
