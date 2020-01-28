@@ -66,13 +66,14 @@ export class AuthService {
 
   SetUserData(user) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
+    this.permissions = user.typeofuser;
     const userData: User = {
       uid: user.uid,
       email: user.email,
       displayName: user.displayName,
       semester: user.semester,
       typeofuser: user.typeofuser,
-    }
+    };
     return userRef.set(userData, {
       merge: true
     });
@@ -81,6 +82,7 @@ export class AuthService {
   LogOut() {
     return this.afAuth.auth.signOut().then(() => {
       localStorage.removeItem('user');
+      this.permissions = new BehaviorSubject(Permissions.LOGGED_OUT);
       this.router.navigate(['sign-in']);
     });
   }
