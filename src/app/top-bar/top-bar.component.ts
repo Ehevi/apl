@@ -28,6 +28,7 @@ export class TopBarComponent implements OnInit {
         this.noAccount = false;
       }); } else {this.noAccount = true; }
     });
+    this.checkPerms();
   }
 
   logOut() {
@@ -37,6 +38,13 @@ export class TopBarComponent implements OnInit {
     this.noAccount = true;
     this.router.navigate(['/']);
     window.location.reload();
+    this.router.navigate(['/login']);
+  }
+
+  checkPerms() {
+    if(this.noAccount === true) {
+      this.router.navigate(['/login']);
+    }
   }
 
 }

@@ -10,8 +10,14 @@ export class CourseDetailsComponent implements OnInit {
 
   @Input() public course: Course;
 
+  private signedFor = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  enterCourse() {
+    this.signedFor = true;
   }
 }

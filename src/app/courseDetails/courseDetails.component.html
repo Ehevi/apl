@@ -1,5 +1,9 @@
 <div class="student-options">
-      <p>Jesteś uczestnikiem tego kursu :)</p>
-      <button class="addMe">Zapisz mnie!</button>
-      <app-stars></app-stars>
+      <div *ngIf="(this.signedFor == true); else elseBlock">
+            <p>Jesteś uczestnikiem tego kursu :)</p>
+            <app-stars></app-stars>
+      </div>
+      <ng-template #elseBlock>
+           <button class="addMe" (click)="this.enterCourse()">Zapisz mnie!</button> 
+      </ng-template>
 </div>
