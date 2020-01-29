@@ -35,8 +35,8 @@ export class TopBarComponent implements OnInit {
     this.authUser = null;
     this.role = null;
     this.noAccount = true;
-    window.location.reload();
     this.router.navigate(['/']);
+    window.location.reload();
   }
 
 }

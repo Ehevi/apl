@@ -5,13 +5,13 @@
 <div class="log-in-out" *ngIf="this.role == 'student'">
   <p>Jesteś zalogowany jako student</p>
   <button class="button" routerLink="/dashboard" routerLinkActive="selected-link">Mój profil</button>
-  <button class="button" (click)="this.logOut()" routerLink="['/']" routerLinkActive="selected-link">Wyloguj się</button>
+  <button class="button" (click)="this.logOut()">Wyloguj się</button>
 </div>
 
 <div class="log-in-out" *ngIf="this.role == 'admin'">
   <p>Jesteś zalogowany jako administrator</p>
   <button class="button" routerLink="/dashboard" routerLinkActive="selected-link">Mój profil</button>
-  <button class="button" (click)="this.logOut()" routerLink="['/']" routerLinkActive="selected-link">Wyloguj się</button>
+  <button class="button" (click)="this.logOut()">Wyloguj się</button>
 </div>
 
 <div class="log-in-out" *ngIf="this.noAccount == true">
