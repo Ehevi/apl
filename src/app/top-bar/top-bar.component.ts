@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Permissions } from '../types/permissions';
-import { PermsService } from '../services/perms.service';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { UserService } from '../services/user.service';
+import { User } from '../types/user';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-top-bar',
@@ -9,27 +12,31 @@ import { PermsService } from '../services/perms.service';
 })
 export class TopBarComponent implements OnInit {
 
-  public permissions: Permissions = Permissions.LOGGED_OUT;
-  public PermsService: PermsService;
+    private authUser;
+    private role;
+    public noAccount: boolean;
+    public auth = AuthService;
+    constructor(private fireAuth: AngularFireAuth, private usersService: UserService, private router: Router) {
+      this.noAccount = true;
+    }
 
-  constructor(gotAuthService: PermsService) {
-    this.PermsService = gotAuthService;
-    this.PermsService.getPermissions().subscribe(perm => this.permissions = perm);
+    ngOnInit() {
+    this.fireAuth.auth.onAuthStateChanged( authUser => {
+      this.authUser = authUser;
+      if (authUser) {this.usersService.getUser(authUser.email).subscribe( (dbUser: User) => {
+        this.role = dbUser.role;
+        this.noAccount = false;
+      }); } else {this.noAccount = true; }
+    });
   }
 
-  ngOnInit() {
-  }
-
-  isStudent(): boolean {
-    return this.permissions === Permissions.STUDENT;
-  }
-
-  isAdmin(): boolean {
-    return this.permissions === Permissions.ADMIN;
-  }
-
-  noAccount(): boolean {
-    return this.permissions === Permissions.LOGGED_OUT;
+  logOut() {
+    this.fireAuth.auth.signOut();
+    this.authUser = null;
+    this.role = null;
+    this.noAccount = true;
+    window.location.reload();
+    this.router.navigate(['/']);
   }
 
 }

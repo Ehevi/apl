@@ -4,9 +4,9 @@
     <div class="basic-info">
       <img class="course-icon" src="{{ course.iconUrl }}" />
       <h1 class="course-name">{{ course.name }}</h1>
-      <button *ngIf="!(!isStudent() && !isAdmin())" (click)="onCourseOpened(course.id)">Więcej info</button>
-      <button *ngIf="isAdmin()" (click)="onCourseEdited(course.id)">Edytuj</button>
-      <button *ngIf="isAdmin()" (click)="onCourseDeleted(course.id)">Usuń</button>
+      <button (click)="onCourseOpened(course.id)">Więcej info</button>
+      <button (click)="onCourseEdited(course.id)" *ngIf="this.role=='admin'">Edytuj</button>
+      <button *ngIf="this.role=='admin'" (click)="onCourseDeleted(course.id)">Usuń</button>
     </div>
     <div class="{{ openedCourseId == course.id ? 'more-info open' : 'more-info' }}">
       <p class="field-desc">{{course.desc}}</p>
@@ -16,7 +16,7 @@
       <p class="field-maxStudents">Limit miejsc: {{course.maxStudents}}</p>
       <p class="field-rating">Aktualna ocena: {{course.rating}}</p>
       <p class="field-teacher">Prowadzący: {{course.teacher}}</p>
-      <app-course-details *ngIf="isStudent()"></app-course-details>
+      <app-course-details *ngIf="this.role=='student'"></app-course-details>
     </div>
   </li>
 </ul>

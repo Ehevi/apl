@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Permissions } from '../types/permissions';
 import { AuthService } from '../services/auth.service';
-import { PermsService } from '../services/perms.service';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { UserService } from '../services/user.service';
+import { User } from '../types/user';
 
 @Component({
   selector: 'app-home-page',
@@ -11,13 +12,18 @@ import { PermsService } from '../services/perms.service';
 export class HomePageComponent implements OnInit {
 
   private editingId = -1;
-  private permissions: Permissions = Permissions.LOGGED_OUT;
+  private authUser = null;
+  private role = null;
 
-  constructor(private permsService: PermsService) {
-    this.permsService.getPermissions().subscribe(perm => this.permissions = perm);
-  }
+  constructor(private fireAuth: AngularFireAuth, private usersService: UserService) { }
 
   ngOnInit() {
+    this.fireAuth.auth.onAuthStateChanged( authUser => {
+      this.authUser = authUser;
+      if (authUser) {this.usersService.getUser(authUser.email).subscribe( (dbUser: User) => {
+        this.role = dbUser.role;
+      }); }
+    });
   }
 
   onCourseEditTriggered(id: number) {
@@ -32,7 +38,4 @@ export class HomePageComponent implements OnInit {
     this.editingId = -1;
   }
 
-  isAdmin(): boolean {
-    return this.permissions === Permissions.ADMIN;
-  }
 }

@@ -5,14 +5,14 @@
   </div>
   <aside>
       <h1>UTWÓRZ KONTO</h1>
-      <form>
+      <form [formGroup]="passForm" (ngSubmit)="onSubmit()" novalidate>
         <label>
           Adres e-mail:
-          <input type="email" class="formControl" #userEmail required>
+          <input type="email" class="formControl" formControlName="email" required>
         </label>
         <label>
           Hasło:
-          <input type="password" class="formControl" #userPwd required>
+          <input type="password" class="formControl" formControlName="password" required>
         </label>
         <label>
           Zapoznałem się z regulaminem: 
@@ -31,7 +31,7 @@
           <option>who cares anyway</option>
         </select>
       </label>
-        <button class="button" value="Sign Up" (click)="authService.Register(userEmail.value, userPwd.value)">Zatwierdź</button>
+        <button type="submit" class="button" value="Sign Up" (click)="authService.Register(userEmail.value, userPwd.value)">Zatwierdź</button>
       </form>
   </aside>
 </div>

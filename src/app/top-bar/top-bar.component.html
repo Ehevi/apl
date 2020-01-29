@@ -2,19 +2,19 @@
     <h1>Ocenianie kursów</h1>
 </a>
 
-<div class="log-in-out" *ngIf="isStudent()">
+<div class="log-in-out" *ngIf="this.role == 'student'">
   <p>Jesteś zalogowany jako student</p>
   <button class="button" routerLink="/dashboard" routerLinkActive="selected-link">Mój profil</button>
-  <button class="button" (click)="this.authService.LogOut(); this.permissions=Permissions.LOGGED_OUT">Wyloguj się</button>
+  <button class="button" (click)="this.logOut()" routerLink="['/']" routerLinkActive="selected-link">Wyloguj się</button>
 </div>
 
-<div class="log-in-out" *ngIf="isAdmin()">
+<div class="log-in-out" *ngIf="this.role == 'admin'">
   <p>Jesteś zalogowany jako administrator</p>
   <button class="button" routerLink="/dashboard" routerLinkActive="selected-link">Mój profil</button>
-  <button class="button" (click)="this.authService.LogOut(); this.permissions=Permissions.LOGGED_OUT">Wyloguj się</button>
+  <button class="button" (click)="this.logOut()" routerLink="['/']" routerLinkActive="selected-link">Wyloguj się</button>
 </div>
 
-<div class="log-in-out" *ngIf="noAccount()">
+<div class="log-in-out" *ngIf="this.noAccount == true">
   <a routerLink="/login" routerLinkActive="selected-link" class="button">Logowanie</a>
   <a routerLink="/rejestracja" routerLinkActive="selected-link" class="button">Rejestracja</a>
 </div>

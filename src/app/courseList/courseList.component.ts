@@ -1,9 +1,10 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CoursesService } from '../services/courses.service';
 import { Course } from '../types/course';
-import { Permissions } from '../types/permissions';
 import { AuthService } from '../services/auth.service';
-import { PermsService } from '../services/perms.service';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { UserService } from '../services/user.service';
+import { User } from '../types/user';
 
 @Component({
   selector: 'app-course-list',
@@ -12,21 +13,27 @@ import { PermsService } from '../services/perms.service';
 })
 export class CourseListComponent implements OnInit {
 
-  private permissions: Permissions = Permissions.LOGGED_OUT;
   coursesArray: Course[];
   filterBy = 'type';
   classType = 'all';
   openedCourseId = -1;
+  private authUser;
+  private role;
+  private noAccount: boolean;
 
   @Output() editCourse = new EventEmitter<number>();
 
-  constructor(private coursesService: CoursesService, private permsservice: PermsService) {
-    this.permsservice.getPermissions().subscribe(perm => this.permissions = perm);
-  }
+  constructor(private coursesService: CoursesService, private fireAuth: AngularFireAuth, private usersService: UserService) { }
 
   ngOnInit() {
     this.coursesService.getCourses().subscribe(data => {
       this.coursesArray = data;
+    });
+    this.fireAuth.auth.onAuthStateChanged( authUser => {
+      this.authUser = authUser;
+      if (authUser) {this.usersService.getUser(authUser.email).subscribe( (dbUser: User) => {
+        this.role = dbUser.role;
+      }); } else {this.noAccount = true; }
     });
   }
 
@@ -46,11 +53,11 @@ export class CourseListComponent implements OnInit {
     this.coursesService.deleteCourse(id);
   }
 
-  isStudent(): boolean {
-    return this.permissions === Permissions.STUDENT;
+  logOut() {
+    this.fireAuth.auth.signOut();
+    this.noAccount = true;
+    this.role = undefined;
+    this.authUser = null;
   }
 
-  isAdmin(): boolean {
-    return this.permissions === Permissions.ADMIN;
-  }
 }

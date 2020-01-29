@@ -28,3 +28,4 @@ export class AppRoutingModule { }
 export const routingComponents = [
   AddNewCourseComponent, CourseListComponent,
   RejestracjaComponent, LoginComponent];
+  

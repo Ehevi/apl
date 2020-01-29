@@ -4,6 +4,6 @@
         <app-course-list (editCourse)="onCourseEditTriggered($event)"></app-course-list>
     </div>
     <aside>
-        <app-add-new-course *ngIf="isAdmin()" editingId={{editingId}} (editCancelled)="onEditCancelled()" (editSuccessful)="onEditSuccessful()"></app-add-new-course>
+        <app-add-new-course *ngIf="this.role == 'admin'" editingId={{editingId}} (editCancelled)="onEditCancelled()" (editSuccessful)="onEditSuccessful()"></app-add-new-course>
     </aside>
 </div>

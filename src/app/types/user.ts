@@ -1,5 +1,7 @@
-export interface User {
-    uid: string;
+export class User {
     email: string;
-    displayName: string;
+    displayname: string;
+    role: string;
+    courses: string[];
+    ratedcourses: string[];
 }
